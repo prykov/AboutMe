@@ -1,0 +1,16 @@
+{% extends "base.html"%}
+{% block title%} Education {% endblock %}
+{% block content%} 
+<div class="container content">
+    <div class="page-header">
+        <h1>Образование</h1>
+    </div>
+    {% for study in study_places %}
+    <div class="well">
+        <h2>{{study.name}}</h2>
+        <p>Специальность: {{study.spec}}</p>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock %}

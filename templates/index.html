@@ -1,0 +1,28 @@
+  {% extends "base.html"%}
+  {% block title %}About Me{% endblock %}
+  {% block content%}
+  <div class="content container" role="main">		
+    <div class="row info">
+     <div class="media col-sm-3 col-lg-3 col-md-3">
+      <img src="https://avatars.mds.yandex.net/get-pdb/25978/4eab7c15-fb48-4052-831e-ca900803eaeb/s1200" class="media-object" alt="Мое фото">  		
+    </div>
+    <div class="col-sm-9 col-lg-9 col-md-9">
+      <h2>{{surname|title}} {{name|title}} {{middle_name|title}} </h2>
+      <p><strong>Дата рождения:</strong> 1990г.</p>
+      <p><strong>Город:</strong> Красноярск</p>
+      <p><strong>Образование:</strong> Высшее</p>
+      <p><strong>Хобби:</strong>
+        <ol>
+        {% if hobbys %}
+          {% for hobby in hobbys %}
+            <li>"{{hobby.name}}(c {{hobby.year}})"</li>
+          {% endfor%}
+          {% else %} нет хобби
+        {% endif %}
+        <ol>
+      </p>
+    </div>
+  </div>  		
+  <p class="discription">{{discsiption}}</p>
+</div>
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends "base.html"%}
+{% block title%} Work {% endblock %}
+{% block content%} 
+
+<div class="container content">
+    <div class="page-header">
+        <h1>Опыт работы</h1>
+    </div>
+    {% for work in work_places %}
+    <div class="well">
+        <a href="/organization/{{work.organization.site}}">{{work.organization}}</a>
+        <p><strong>Должность:</strong> {{work.post}}</p>
+        <p class="discription">{{work.desc}} {{work.period}} года</p>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock %}
